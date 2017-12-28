@@ -8,3 +8,6 @@
 */target
 .DS_Store
 .gitattributes
+*.prefs
+xxl-job-executor-samples/xxl-job-executor-sample-springboot/.classpath
+xxl-job-executor-samples/xxl-job-executor-sample-springboot/.project

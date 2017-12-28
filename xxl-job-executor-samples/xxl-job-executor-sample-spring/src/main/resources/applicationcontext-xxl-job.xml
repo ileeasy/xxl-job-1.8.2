@@ -36,6 +36,27 @@
 		<!-- 访问令牌，非空则进行匹配校验[选填] -->
 		<property name="accessToken" value="${xxl.job.accessToken}" />
 	</bean>
-
+    
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/test?autoReconnect=true" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+		<property name="maxActive" value="300" />
+		<property name="initialSize" value="30" />
+		<property name="minIdle" value="30" />
+		<property name="maxWait" value="10000" />
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="SELECT 'x'" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="false" />
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxOpenPreparedStatements" value="20" />
+		<property name="filters" value="stat,wall,slf4j" />
+	</bean>
 
 </beans>
